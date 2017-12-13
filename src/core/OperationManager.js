@@ -1,4 +1,3 @@
-import Observable from 'zen-observable'
 import { print, } from 'graphql'
 import { execute as pipe, } from 'apollo-link'
 import { createOperation, } from '../utils/createOperation'
@@ -85,9 +84,10 @@ export function OperationManager (links) {
     return request
   }
 
-  function subscribe (sourceOrDocument, options) {
+  async function subscribe (sourceOrDocument, options) {
     const operation = createOperation(sourceOrDocument, options)
-    return Observable.from(pipe(links, operation))
+    const observable = await Promise.resolve(pipe(links, operation))
+    return observable
   }
 
   return {

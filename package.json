@@ -18,8 +18,7 @@
   "jsnext:main": "es/index.js",
   "dependencies": {
     "apollo-link": "1.0.6",
-    "artemis-utilities": "0.1.5",
-    "zen-observable": "0.6.0"
+    "artemis-utilities": "0.1.5"
   },
   "devDependencies": {
     "babel-cli": "6.26.0",
